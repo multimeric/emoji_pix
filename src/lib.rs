@@ -1,11 +1,13 @@
+#![doc = include_str!("../README.md")]
 use std::str::FromStr;
 
-use clap::{AppSettings, Clap};
+use clap::{AppSettings, Clap, crate_authors, crate_version};
 use image::imageops::FilterType;
-use image::{open, Rgb};
+use image::{open, Rgb, GenericImageView};
 use lazy_static::lazy_static;
 use scarlet::prelude::*;
 use unicode_names2::name;
+
 
 /// A simple wrapper for the `image` crate's `FilterType`
 #[derive(Debug)]
@@ -32,24 +34,26 @@ impl FromStr for Filter {
     }
 }
 
-/// Options struct for the `emojify` function
+/// Convert an image file into emoji pixel art
 #[derive(Clap)]
-#[clap(setting = AppSettings::ColoredHelp)]
+#[clap(setting = AppSettings::ColoredHelp, version = crate_version!(), author = crate_authors!("\n"))]
 #[derive(Debug, Default)]
 pub struct Opts {
-    /// Path to the image file to convert to emoji art
+    /// Path to the image file to convert to emoji art. The emoji will be printed to stdout.
     pub input: String,
 
-    /// Optional: the width of the output image in characters
+    /// Optional: the width of the output image in characters.
+    /// Note: it only makes sense to specify height or width, as the aspect ratio is always conserved, and the other dimension is calculated as a proportion of this one.
     #[clap(short, long)]
     pub width: Option<u32>,
 
-    /// Optional: the height of the output image in characters
+    /// Optional: the height of the output image in characters.
+    /// Note: it only makes sense to specify height or width, as the aspect ratio is always conserved, and the other dimension is calculated as a proportion of this one.
     #[clap(short, long)]
     pub height: Option<u32>,
 
-    /// Optional: if width or height are provided, the algorithm to use for resizing
-    /// one of: CatmullRom, Gaussian, Lanczos3, Nearest, or Triangle
+    /// Optional: if width or height are provided, the algorithm to use for resizing.
+    /// One of: CatmullRom, Gaussian, Lanczos3, Nearest, or Triangle
     #[clap(default_value = "Gaussian", short, long)]
     pub resize_filter: Filter,
 }
@@ -101,12 +105,11 @@ lazy_static! {
 /// Convert an image into a string of colour pixel emoji
 /// # Examples
 /// ```
-/// use pixel_art_emoji::{emojify, Opts};
+/// use emoji_pix::{emojify, Opts};
 /// emojify(Opts {
 ///     // This was downloaded from https://rustacean.net/assets/rustacean-flat-noshadow.png
 ///     input: String::from("ferris.png"),
 ///     height: Some(30),
-///     width: Some(30),
 ///     ..Opts::default()
 /// });
 /// ```
@@ -152,11 +155,13 @@ lazy_static! {
 ///
 pub fn emojify(opts: Opts) -> String {
     let img = open(opts.input).unwrap();
+    let height = opts.height.unwrap_or(img.height());
+    let width = opts.width.unwrap_or(img.width());
 
     match (opts.width, opts.height) {
-        // Handle the optional resizing
-        (Some(w), Some(h)) => img.resize(w, h, opts.resize_filter.0),
-        _ => img,
+        // If neither height nor width was provided, skip resizing entirely
+        (None, None) => img,
+        _ => img.resize(width, height, opts.resize_filter.0),
     }
     .to_rgb8()
     .rows()
