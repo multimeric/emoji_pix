@@ -23,6 +23,8 @@ For example, if you use `cargo run ferris.png --width 30 --height 30` on the Fer
 ⬛⬛⬛⬛🟫⬛⬛⬛⬛🟫🟫🟫🟫🟫⬛⬛🟫🟫🟫🟫🟫⬛⬛⬛⬛⬛🟫⬛⬛⬛
 ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛🟫🟫🟫🟫⬛⬛🟫🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
 ```
+Regardless of where you post the resulting pixel art, I suggest using a monospaced font or `code` formatting when you post this, as it will generally give a more pleasing result.
+
 ## Installation
 I haven't yet set up binary builds or published to cargo, so for the moment you'll have to:
 1. Make sure [Rust is installed](https://www.rust-lang.org/tools/install), as well as `git`
