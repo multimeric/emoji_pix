@@ -1,6 +1,6 @@
 [package]
 name = "emoji_pix"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Michael Milton <michael.r.milton@gmail.com>"]
 description = "A simple command-line utility (and Rust crate!) for converting from a conventional image file (e.g. a PNG file) into a pixel-art version constructed with emoji"
 license = "GPL-3.0-only"
