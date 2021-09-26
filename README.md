@@ -42,3 +42,4 @@ EmojiPix then:
 * [ ] Automated binary builds, meaning that you don't have to have Rust installed to use this.
 * [ ] Customizable emoji set, to remove the assumption you are using Twemoji. This would allow you to get more accurate images on platforms that aren't using Twemoji. The emoji set would then be provided as a flag on the command-line.
 * [ ] Allow reading the image from memory, rather than requiring a file path.
+* [ ] Compile for WASM and make this into a web app
