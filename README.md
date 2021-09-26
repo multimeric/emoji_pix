@@ -43,3 +43,4 @@ EmojiPix then:
 * [ ] Customizable emoji set, to remove the assumption you are using Twemoji. This would allow you to get more accurate images on platforms that aren't using Twemoji. The emoji set would then be provided as a flag on the command-line.
 * [ ] Allow reading the image from memory, rather than requiring a file path.
 * [ ] Compile for WASM and make this into a web app
+* [ ] Automatically separate image chunks for posting on discord, to cater for the 2000 character message limit
