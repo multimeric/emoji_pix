@@ -1,28 +1,9 @@
 # EmojiPix
 This is a simple command-line utility (and Rust crate!) for converting from a conventional image file (e.g. a PNG file) into a pixel-art version constructed with emoji.
 One good use for this might be making pixel art in Discord, in posts or in your own profile.
-For example, if you use `emoji_pix ferris.png --width 30` on the Ferris (Rust's mascot) picture downloaded [from here](https://rustacean.net/assets/rustacean-flat-noshadow.png), you will get:
-```text
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛🟫⬛🟫🟫⬛🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬛⬛⬛⬛⬛⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬛⬛⬛⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟥🟫⬛⬛⬛⬛⬛⬛⬛
-⬛⬛⬛⬛⬛⬛🟥🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛⬛⬛⬛⬛
-⬛⬛⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛⬛⬛
-⬛⬛⬛⬛🟥🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛⬛⬛
-⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛
-⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛
-⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛
-⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛
-⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬜⬛🟫🟫🟫⬜⬛🟥🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛
-⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛🟫🟫🟫⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛
-🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟥🟫🟫🟫🟫🟫🟥🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫
-🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟥🟫🟫🟫
-⬛🟫🟫🟥🟥🟥🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫🟫⬛🟥🟫🟫⬛
-⬛⬛🟫🟫⬛⬛⬛🟫🟫🟫🟫🟫🟫🟫🟥🟥🟫🟫🟫🟫🟫🟫🟫🟫⬛⬛⬛🟫🟥⬛
-⬛⬛⬛🟫🟫⬛⬛⬛🟫🟫🟫🟫⬛⬛⬛⬛⬛⬛🟫🟫🟫🟫⬛⬛⬛⬛🟫🟫⬛⬛
-⬛⬛⬛⬛🟫⬛⬛⬛⬛🟫🟫🟫🟫🟫⬛⬛🟫🟫🟫🟫🟫⬛⬛⬛⬛⬛🟫⬛⬛⬛
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛🟫🟫🟫🟫⬛⬛🟫🟫🟫⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-```
+For example, if you use `emoji_pix ferris.png --width 30` on the Ferris (Rust's mascot) picture downloaded [from here](https://rustacean.net/assets/rustacean-flat-noshadow.png), and paste the output into Discord (over several messages), it will look like this:
+
+![](discord_example.png)
 
 ## CLI Installation and Usage
 
@@ -42,7 +23,8 @@ The full CLI options are obtained using `emoji_pix --help`.
 
 * If your source image has a transparent background, try editing the image and replacing the background with a solid colour that isn't already in the image. This is because transparency gets automatically converted to black, which may not give you good contrast for your image.
 * For reasons explain below, the resulting "pictures" will look best on platforms that use Twemoji, such as Twitter and Discord.
-* I suggest using a monospaced font or `code` formatting when you post this, as it will generally give a more pleasing result. This is supported by Discord and GitHub using \`\`\` code blocks.
+* On discord, messages can only be 2000 characters long at most. What this means is that you'll often have to split up the large pictures over several messages, but this still looks good, as demonstrated by the above example.
+* On some other platforms, putting the pixel art inside a monospaced font or `code` block will generally give a more pleasing result.
 
 ## How it Works
 
