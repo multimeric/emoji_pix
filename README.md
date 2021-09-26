@@ -25,12 +25,13 @@ For example, if you use `cargo run ferris.png --width 30 --height 30` on the Fer
 ```
 Regardless of where you post the resulting pixel art, I suggest using a monospaced font or `code` formatting when you post this, as it will generally give a more pleasing result.
 
-## Installation
+## CLI Installation and Usage
 I haven't yet set up binary builds or published to cargo, so for the moment you'll have to:
 1. Make sure [Rust is installed](https://www.rust-lang.org/tools/install), as well as `git`
 2. Clone the repo using `git clone https://github.com/multimeric/PixelArtEmoji.git`
-## CLI Usage
-To run the binary, use `cargo run [options]`. For example, `cargo run ferris.png --width 30 --height 30`.
+3. `cd PixelArtEmoji`
+4. To run the binary, use `cargo run [options]`. For example, `cargo run ferris.png --width 30 --height 30`.
+
 The full CLI options are obtained using `cargo run -- --help`:
 ```
 USAGE:
