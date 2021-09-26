@@ -17,7 +17,7 @@ The full CLI options are obtained using `emoji_pix --help`.
 ## Rust Crate Usage
 
 1. Install the crate by adding `emoji_pix = "0.1.0"` to your `Cargo.toml`
-2. Refer to the [documentation here](https://docs.rs/crate/emoji_pix/latest)
+2. Refer to the [documentation here](https://docs.rs/emoji_pix/latest/emoji_pix)
 
 ## Usage Tips
 
