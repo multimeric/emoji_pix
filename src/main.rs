@@ -1,5 +1,5 @@
 use clap::Clap;
-use pixel_art_emoji::{emojify, Opts};
+use emoji_pix::{emojify, Opts};
 
 fn main() {
     let opts = Opts::parse();

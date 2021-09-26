@@ -1,4 +1,4 @@
-# Pixel Art Emoji
+# Emoji Pix
 This is a simple command-line utility (and Rust crate!) for converting from a conventional image file (e.g. a PNG file) into a pixel-art version constructed with emoji.
 One good use for this might be making pixel art in Discord, in posts or in your own profile.
 For example, if you use `cargo run ferris.png --width 30 --height 30` on the Ferris (Rust's mascot) picture downloaded [from here](https://rustacean.net/assets/rustacean-flat-noshadow.png), you will get:
