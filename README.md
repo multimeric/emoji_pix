@@ -28,9 +28,7 @@ For example, if you use `emoji_pix ferris.png --width 30` on the Ferris (Rust's 
 
 1. Make sure [Rust is installed](https://www.rust-lang.org/tools/install)
 2. Run `cargo install emoji_pix`
-3. You will now have `emoji_pix` installed. 
-
-To run the binary, use `emoji_pix [options]`. For example, `emoji_pix ferris.png --width 30 --height 30`.
+3. Run the binary using `emoji_pix [options]`. For example, `emoji_pix ferris.png --width 30`.
 
 The full CLI options are obtained using `emoji_pix --help`.
 
