@@ -1,13 +1,12 @@
 #![doc = include_str!("../README.md")]
 use std::str::FromStr;
 
-use clap::{AppSettings, Clap, crate_authors, crate_version};
+use clap::{crate_authors, crate_version, Parser};
 use image::imageops::FilterType;
-use image::{open, Rgb, GenericImageView};
+use image::{open, GenericImageView, Rgb};
 use lazy_static::lazy_static;
 use scarlet::prelude::*;
 use unicode_names2::name;
-
 
 /// A simple wrapper for the `image` crate's `FilterType`
 #[derive(Debug)]
@@ -35,9 +34,8 @@ impl FromStr for Filter {
 }
 
 /// Convert an image file into emoji pixel art
-#[derive(Clap)]
-#[clap(setting = AppSettings::ColoredHelp, version = crate_version!(), author = crate_authors!("\n"))]
-#[derive(Debug, Default)]
+#[derive(Parser, Debug, Default)]
+#[clap(version = crate_version!(), author = crate_authors!("\n"))]
 pub struct Opts {
     /// Path to the image file to convert to emoji art. The emoji will be printed to stdout.
     pub input: String,
