@@ -74,7 +74,7 @@ impl EmojiColour {
         EmojiColour {
             name: name(char).unwrap().collect(),
             colour: RGBColor::from_hex_code(colour).unwrap(),
-            char: char,
+            char,
         }
     }
 }
@@ -153,8 +153,8 @@ lazy_static! {
 ///
 pub fn emojify(opts: Opts) -> String {
     let img = open(opts.input).unwrap();
-    let height = opts.height.unwrap_or(img.height());
-    let width = opts.width.unwrap_or(img.width());
+    let height = opts.height.unwrap_or_else(|| img.height());
+    let width = opts.width.unwrap_or_else(|| img.width());
 
     match (opts.width, opts.height) {
         // If neither height nor width was provided, skip resizing entirely
