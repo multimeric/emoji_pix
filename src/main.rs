@@ -1,4 +1,4 @@
-use clap::Clap;
+use clap::Parser;
 use emoji_pix::{emojify, Opts};
 
 fn main() {
